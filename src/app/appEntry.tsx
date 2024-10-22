@@ -1,13 +1,11 @@
-import { LayoutWithSidebar } from '@/app/layouts/LayoutWithSidebar.tsx';
-import { HomePage } from '@/pages/home';
+import { appRouter } from '@/app/appRouter.tsx';
 import '@/shared/index.css';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <LayoutWithSidebar>
-      <HomePage />
-    </LayoutWithSidebar>
+    <RouterProvider router={appRouter()} />
   </StrictMode>,
 );
