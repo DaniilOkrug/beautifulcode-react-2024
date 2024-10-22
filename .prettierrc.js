@@ -7,7 +7,7 @@ const config = {
   bracketSpacing: true,
   printWidth: 120,
   tabWidth: 2,
-  plugins: ['prettier-plugin-organize-imports'],
+  plugins: ['prettier-plugin-organize-imports', 'prettier-plugin-tailwindcss'],
 };
 
 module.exports = config;
