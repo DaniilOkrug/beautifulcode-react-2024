@@ -2,3 +2,8 @@ export * from './Button/Button';
 export * from './Form/Form';
 export * from './Input/Input';
 export * from './Label/Label';
+export * from './Separator/Separator';
+export * from './Sheet/Sheet';
+export * from './Sidebar/Sidebar';
+export * from './Skeleton/Skeleton';
+export * from './Tooltip/Tooltip';
