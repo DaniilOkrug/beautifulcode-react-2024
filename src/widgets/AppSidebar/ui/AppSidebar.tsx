@@ -8,33 +8,24 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/shared/ui';
-import { CalendarIcon, HomeIcon, InboxIcon, SearchIcon, SettingsIcon } from 'lucide-react';
+import { HomeIcon, ListIcon, NotebookPenIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const items = [
   {
     title: 'Home',
-    url: '#',
+    url: '/',
     icon: HomeIcon,
   },
   {
-    title: 'Inbox',
-    url: '#',
-    icon: InboxIcon,
+    title: 'Categories',
+    url: '/categories',
+    icon: ListIcon,
   },
   {
-    title: 'Calendar',
-    url: '#',
-    icon: CalendarIcon,
-  },
-  {
-    title: 'Search',
-    url: '#',
-    icon: SearchIcon,
-  },
-  {
-    title: 'Settings',
-    url: '#',
-    icon: SettingsIcon,
+    title: 'Transactions',
+    url: '/transactions',
+    icon: NotebookPenIcon,
   },
 ];
 
@@ -49,10 +40,10 @@ export const AppSidebar = () => {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link to={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
