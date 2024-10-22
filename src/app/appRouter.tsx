@@ -1,4 +1,4 @@
-import { layoutWithSidebar } from '@/app/layouts/layoutWithSidebar.tsx';
+import { layoutWithSidebar } from '@/app/layouts/baseLayout';
 import { CategoriesPage } from '@/pages/categories';
 import { HomePage } from '@/pages/home';
 import { TransactionsPage } from '@/pages/transactions';
