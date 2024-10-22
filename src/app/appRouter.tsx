@@ -1,5 +1,7 @@
 import { layoutWithSidebar } from '@/app/layouts/layoutWithSidebar.tsx';
+import { CategoriesPage } from '@/pages/categories';
 import { HomePage } from '@/pages/home';
+import { TransactionsPage } from '@/pages/transactions';
 import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from 'react-router-dom';
 
 export const appRouter = () =>
@@ -8,8 +10,8 @@ export const appRouter = () =>
       <Route>
         <Route element={layoutWithSidebar}>
           <Route element={<HomePage />} path="/" />
-          <Route element={<HomePage />} path="/categories" />
-          <Route element={<HomePage />} path="/transactions" />
+          <Route element={<CategoriesPage />} path="/categories" />
+          <Route element={<TransactionsPage />} path="/transactions" />
         </Route>
 
         <Route element={<Navigate to="/" />} path="*" />

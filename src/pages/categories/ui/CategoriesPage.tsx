@@ -1,7 +1,7 @@
 import { Button, Form, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@/shared/ui';
 import { useForm } from 'react-hook-form';
 
-export const HomePage = () => {
+export const CategoriesPage = () => {
   const form = useForm();
 
   return (

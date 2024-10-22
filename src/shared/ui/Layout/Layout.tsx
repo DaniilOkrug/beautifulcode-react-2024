@@ -12,7 +12,9 @@ export const Layout: FC<LayoutProps> = ({ sidebarSlot }) => {
       {sidebarSlot}
       <main>
         <SidebarTrigger />
-        <Outlet />
+        <div className="p-4">
+          <Outlet />
+        </div>
       </main>
     </SidebarProvider>
   );
