@@ -1,1 +1,1 @@
-export { startApiMockWorker } from './mock/browser';
+export * from './baseApi';

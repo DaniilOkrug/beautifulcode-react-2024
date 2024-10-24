@@ -10,7 +10,7 @@ export const handlers = [
   }),
 ];
 
-export const apiMockWorker = setupWorker(...handlers);
+const apiMockWorker = setupWorker(...handlers);
 
 export async function startApiMockWorker() {
   await apiMockWorker.start({
