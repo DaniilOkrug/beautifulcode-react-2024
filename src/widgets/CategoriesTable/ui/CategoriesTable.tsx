@@ -1,48 +1,32 @@
+import { useCreateCategoryMutation, useGetCategoriesQuery } from '@/entities/category';
 import type { CreateCategoryFormScheme } from '@/features/createCategory';
 import { createCategoryFormScheme, CreateCategoryTableFooter } from '@/features/createCategory';
 import { DataTable, Form } from '@/shared/ui';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import type { Category } from '../lib/columns';
 import { columns } from '../lib/columns';
 
 const defaultValues: CreateCategoryFormScheme = {
-  categoryName: '',
+  name: '',
 };
 
 export const CategoriesTable = () => {
+  const { data: categoriesData = [] } = useGetCategoriesQuery();
+  const [createCategory] = useCreateCategoryMutation();
+
   const form = useForm<CreateCategoryFormScheme>({
     resolver: zodResolver(createCategoryFormScheme),
     defaultValues,
   });
 
-  const onSubmitHandler = (data: CreateCategoryFormScheme) => {
-    console.log(data);
+  const onSubmitHandler = async (data: CreateCategoryFormScheme) => {
+    await createCategory(data);
   };
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmitHandler)}>
-        <DataTable
-          columns={columns}
-          data={
-            [
-              {
-                id: '728ed52f',
-                name: 'Test category',
-              },
-              {
-                id: '728ed52f',
-                name: 'Test category 2',
-              },
-              {
-                id: '728ed52f',
-                name: 'Test category 3',
-              },
-            ] as Category[]
-          }
-          footerSlot={<CreateCategoryTableFooter />}
-        />
+        <DataTable columns={columns} data={categoriesData} footerSlot={<CreateCategoryTableFooter />} />
       </form>
     </Form>
   );

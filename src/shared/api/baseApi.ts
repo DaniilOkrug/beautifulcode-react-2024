@@ -1,8 +1,9 @@
 import { baseQuery } from '@/shared/api/baseQuery.ts';
-import { createApi } from '@reduxjs/toolkit/query';
+import { CATEGORY_TAG } from '@/shared/api/tags.ts';
+import { createApi } from '@reduxjs/toolkit/query/react';
 
 export const baseApi = createApi({
-  tagTypes: [],
+  tagTypes: [CATEGORY_TAG],
   reducerPath: 'api',
   baseQuery,
   endpoints: () => ({}),

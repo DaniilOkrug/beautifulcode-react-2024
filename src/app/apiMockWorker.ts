@@ -1,16 +1,7 @@
-import { http, HttpResponse } from 'msw';
+import { categoryHandlers } from '@/entities/category';
 import { setupWorker } from 'msw/browser';
 
-export const handlers = [
-  // And here's a request handler with MSW
-  // for the same "GET /user" request that
-  // responds with a mock JSON response.
-  http.get('/user', () => {
-    return HttpResponse.json({ name: 'John' });
-  }),
-];
-
-const apiMockWorker = setupWorker(...handlers);
+const apiMockWorker = setupWorker(...categoryHandlers);
 
 export async function startApiMockWorker() {
   await apiMockWorker.start({

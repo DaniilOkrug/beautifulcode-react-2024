@@ -1,11 +1,7 @@
+import type { Category } from '@/entities/category';
 import { Button } from '@/shared/ui';
 import type { ColumnDef } from '@tanstack/react-table';
 import { TrashIcon } from 'lucide-react';
-
-export type Category = {
-  id: string;
-  name: string;
-};
 
 export const columns: ColumnDef<Category>[] = [
   {
