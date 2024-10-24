@@ -13,7 +13,7 @@ export const Layout: FC<LayoutProps> = ({ sidebarSlot, headerSlot }) => {
       {sidebarSlot}
       <main className="min-h-screen w-full">
         {headerSlot}
-        <div className="w-full p-4">
+        <div className="mx-auto max-w-[1120px] p-4">
           <Outlet />
         </div>
       </main>

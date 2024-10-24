@@ -4,8 +4,18 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <RouterProvider router={appRouter()} />
-  </StrictMode>,
-);
+async function initApp() {
+  const module = await import('@/shared/api/mock/browser');
+  await module.startApiMockWorker();
+}
+
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const root = createRoot(document.getElementById('root')!);
+
+void initApp().then(() => {
+  root.render(
+    <StrictMode>
+      <RouterProvider router={appRouter()} />
+    </StrictMode>,
+  );
+});

@@ -42,6 +42,7 @@
     "eslint-plugin-react-hooks": "5.1.0-rc.0",
     "eslint-plugin-react-refresh": "0.4.12",
     "globals": "15.9.0",
+    "msw": "2.5.1",
     "postcss": "8.4.47",
     "prettier-plugin-organize-imports": "4.1.0",
     "prettier-plugin-tailwindcss": "0.6.8",
@@ -53,6 +54,11 @@
   "eslintConfig": {
     "extends": [
       "./.eslintrc"
+    ]
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
     ]
   }
 }

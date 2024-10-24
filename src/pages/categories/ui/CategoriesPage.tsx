@@ -1,7 +1,19 @@
-import { Button, Input, TableCell, TableFooter, TableRow } from '@/shared/ui';
+import {
+  Button,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+  Input,
+  TableCell,
+  TableFooter,
+  TableRow,
+} from '@/shared/ui';
 import { DataTable } from '@/shared/ui/DataTable/DataTable.tsx';
 import type { ColumnDef } from '@tanstack/react-table';
 import { TrashIcon } from 'lucide-react';
+import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
 const createCategoryScheme = z.object({
@@ -11,54 +23,60 @@ const createCategoryScheme = z.object({
 type CreateCategoryScheme = z.infer<typeof createCategoryScheme>;
 
 export const CategoriesPage = () => {
-  // const form = useForm<CreateCategoryScheme>();
+  const form = useForm<CreateCategoryScheme>();
 
   return (
-    <section className="mx-auto max-w-[1120px]">
-      {/*<Form {...form}>*/}
-      {/*  <form className="flex items-end gap-2">*/}
-      {/*    <FormField*/}
-      {/*      control={form.control}*/}
-      {/*      render={({ field }) => (*/}
-      {/*        <FormItem>*/}
-      {/*          <FormLabel>Category Name</FormLabel>*/}
-      {/*          <FormControl>*/}
-      {/*            <Input {...field} />*/}
-      {/*          </FormControl>*/}
-      {/*          <FormMessage />*/}
-      {/*        </FormItem>*/}
-      {/*      )}*/}
-      {/*      name="categoryName"*/}
-      {/*    />*/}
-      {/*    <Button type="submit">Add Category</Button>*/}
-      {/*  </form>*/}
-      {/*</Form>*/}
-
-      <DataTable
-        columns={columns}
-        data={
-          [
-            {
-              id: '728ed52f',
-              name: 'Test category',
-            },
-          ] as Category[]
-        }
-        footerSlot={
-          <TableFooter>
-            <TableRow>
-              <TableCell colSpan={1}>
-                <Input />
-              </TableCell>
-              <TableCell colSpan={1}>
-                <div className="flex flex-grow justify-end">
-                  <Button variant="ghost">+ Add category</Button>
-                </div>
-              </TableCell>
-            </TableRow>
-          </TableFooter>
-        }
-      />
+    <section>
+      <Form {...form}>
+        <form>
+          <DataTable
+            columns={columns}
+            data={
+              [
+                {
+                  id: '728ed52f',
+                  name: 'Test category',
+                },
+                {
+                  id: '728ed52f',
+                  name: 'Test category 2',
+                },
+                {
+                  id: '728ed52f',
+                  name: 'Test category 3',
+                },
+              ] as Category[]
+            }
+            footerSlot={
+              <TableFooter>
+                <TableRow>
+                  <TableCell colSpan={1}>
+                    <FormField
+                      control={form.control}
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input placeholder="New category name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                      name="categoryName"
+                    />
+                  </TableCell>
+                  <TableCell colSpan={1}>
+                    <div className="flex flex-grow justify-end">
+                      <Button variant="ghost" type="submit">
+                        + Add category
+                      </Button>
+                    </div>
+                  </TableCell>
+                </TableRow>
+              </TableFooter>
+            }
+          />
+        </form>
+      </Form>
     </section>
   );
 };
