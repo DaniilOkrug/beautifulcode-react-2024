@@ -1,4 +1,5 @@
 export * from './Button/Button';
+export * from './DataTable/DataTable';
 export * from './Form/Form';
 export * from './Input/Input';
 export * from './Label/Label';

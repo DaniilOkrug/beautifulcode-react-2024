@@ -74,5 +74,6 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': 'off',
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
     'no-console': ['warn'],
+    '@typescript-eslint/no-misused-promises': ['off'],
   },
 };
