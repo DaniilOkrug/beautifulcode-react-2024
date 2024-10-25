@@ -5,13 +5,13 @@ export const categoryApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     getCategories: build.query<Category[], void>({
       query: () => ({
-        url: `/categories`,
+        url: `/category`,
       }),
       providesTags: [CATEGORY_TAG],
     }),
     createCategory: build.mutation<Category, CreateCategoryRequest>({
       query: (body) => ({
-        url: `/categories`,
+        url: `/category`,
         method: 'POST',
         body,
       }),

@@ -6,4 +6,9 @@ export const db = factory({
     name: String,
     budget: Number,
   },
+  transaction: {
+    id: primaryKey(String),
+    categoryId: String,
+    amount: Number,
+  },
 });

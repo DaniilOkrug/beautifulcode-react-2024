@@ -1,7 +1,8 @@
 import { categoryHandlers } from '@/entities/category';
+import { transactionHandlers } from '@/entities/transaction';
 import { setupWorker } from 'msw/browser';
 
-const apiMockWorker = setupWorker(...categoryHandlers);
+const apiMockWorker = setupWorker(...categoryHandlers, ...transactionHandlers);
 
 export async function startApiMockWorker() {
   await apiMockWorker.start({
