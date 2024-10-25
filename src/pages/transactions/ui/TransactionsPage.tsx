@@ -1,3 +1,9 @@
+import { CreateTransactionForm } from '@/features/createTransaction';
+
 export const TransactionsPage = () => {
-  return <div>TransactionsPage</div>;
+  return (
+    <section>
+      <CreateTransactionForm />
+    </section>
+  );
 };
