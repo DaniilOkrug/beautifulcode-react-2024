@@ -33,6 +33,20 @@ export const CreateCategoryTableFooter = () => {
           />
         </TableCell>
         <TableCell colSpan={1}>
+          <FormField
+            control={control}
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder="Category budget" type="number" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+            name="budget"
+          />
+        </TableCell>
+        <TableCell colSpan={1}>
           <div className="flex flex-grow justify-end">
             <Button variant="ghost" type="submit">
               + Add category

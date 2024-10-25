@@ -4,5 +4,6 @@ export const db = factory({
   category: {
     id: primaryKey(String),
     name: String,
+    budget: Number,
   },
 });

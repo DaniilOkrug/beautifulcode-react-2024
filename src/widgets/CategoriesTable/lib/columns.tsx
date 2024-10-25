@@ -9,11 +9,15 @@ export const columns: ColumnDef<Category>[] = [
     header: 'Name',
   },
   {
+    accessorKey: 'budget',
+    header: 'Budget',
+  },
+  {
     header: ' ',
     accessorKey: 'actions',
     cell: () => (
       <div className="flex flex-grow justify-end">
-        <Button variant="ghost">
+        <Button variant="ghost" type="button">
           <TrashIcon />
         </Button>
       </div>

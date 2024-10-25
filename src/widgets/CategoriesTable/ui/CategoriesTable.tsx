@@ -8,6 +8,7 @@ import { columns } from '../lib/columns';
 
 const defaultValues: CreateCategoryFormScheme = {
   name: '',
+  budget: '',
 };
 
 export const CategoriesTable = () => {
@@ -20,7 +21,7 @@ export const CategoriesTable = () => {
   });
 
   const onSubmitHandler = async (data: CreateCategoryFormScheme) => {
-    await createCategory(data);
+    await createCategory({ ...data, budget: Number(data.budget) });
   };
 
   return (
