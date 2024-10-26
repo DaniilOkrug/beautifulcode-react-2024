@@ -14,6 +14,11 @@ export const transactionHandlers = [
       const body = await request.json();
       const newTransaction = __serverDatabase.transaction.create({ ...body, id: uuidv4() });
 
+      __serverDatabase.category.update({
+        where: { id: { equals: body.categoryId } },
+        data: { budget: (prevBudget) => prevBudget - body.amount },
+      });
+
       return HttpResponse.json(newTransaction);
     },
   ),

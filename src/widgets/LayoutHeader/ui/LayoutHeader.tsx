@@ -1,3 +1,4 @@
+import { ShowBudget } from '@/features/showBudget';
 import { Separator, SidebarTrigger } from '@/shared/ui';
 
 export const LayoutHeader = () => {
@@ -8,7 +9,7 @@ export const LayoutHeader = () => {
 
         <Separator orientation="vertical" className="h-auto" />
 
-        <p>Budget: 0$</p>
+        <ShowBudget />
       </div>
     </div>
   );
