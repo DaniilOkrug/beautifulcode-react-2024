@@ -3,7 +3,7 @@ import type { ColumnDef } from '@tanstack/react-table';
 
 export const columns: ColumnDef<Transaction>[] = [
   {
-    accessorKey: 'categoryId',
+    accessorKey: 'category',
     header: 'Category',
   },
   {
