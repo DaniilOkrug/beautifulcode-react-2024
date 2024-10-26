@@ -14,7 +14,7 @@ export function renderChart(expenseData) {
                 data: data,
                 backgroundColor: [
                     '#FF6384',
-                    '#36A2EB',
+                    '#36A2EB',  
                     '#FFCE56',
                     '#4BC0C0',
                     '#9966FF',

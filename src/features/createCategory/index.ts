@@ -1,2 +1,2 @@
-export * from './lib/CreateCategoryFormScheme.ts';
-export { CreateCategoryTableFooter } from './ui/CreateCategoryTableFooter';
+export * from './lib/CreateCategoryFormScheme';
+export { CreateCategoryForm } from './ui/CreateCategoryForm';
