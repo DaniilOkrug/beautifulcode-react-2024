@@ -1,3 +1,9 @@
+import { ExpenseDistribution } from '@/widgets/ExpenseDistribution';
+
 export const HomePage = () => {
-  return <div>Dashboards</div>;
+  return (
+    <section>
+      <ExpenseDistribution />
+    </section>
+  );
 };

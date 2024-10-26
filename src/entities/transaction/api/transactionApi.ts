@@ -1,4 +1,4 @@
-import { baseApi, TRANSACTION_TAG } from '@/shared/api';
+import { baseApi, CATEGORY_TAG, TRANSACTION_TAG } from '@/shared/api';
 import type { CreateTransactionRequest, Transaction } from '../model/types';
 
 export const transactionApi = baseApi.injectEndpoints({
@@ -15,7 +15,7 @@ export const transactionApi = baseApi.injectEndpoints({
         method: 'POST',
         body,
       }),
-      invalidatesTags: [TRANSACTION_TAG],
+      invalidatesTags: [TRANSACTION_TAG, CATEGORY_TAG],
     }),
   }),
 });
