@@ -28,7 +28,7 @@ export const ExpenseDistribution = () => {
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={{}}
-          className="mx-auto aspect-square max-h-[250px] pb-0 [&_.recharts-pie-label-text]:fill-foreground"
+          className="mx-auto aspect-square max-h-[300px] pb-0 [&_.recharts-pie-label-text]:fill-foreground"
         >
           <PieChart accessibilityLayer>
             <ChartTooltip content={<ChartTooltipContent accessibilityLayer hideLabel />} />
