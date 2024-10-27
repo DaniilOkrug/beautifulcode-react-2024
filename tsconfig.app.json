@@ -1,19 +1,14 @@
 {
   "compilerOptions": {
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
     "baseUrl": "./src",
     "paths": {
-      "@/*": [
-        "*"
-      ]
+      "@/*": ["*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -30,8 +25,5 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true
   },
-  "include": [
-    "src",
-    "types"
-  ]
+  "include": ["src", "types", "vitest.setup.ts"]
 }
