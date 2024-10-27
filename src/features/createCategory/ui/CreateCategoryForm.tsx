@@ -24,7 +24,7 @@ export const CreateCategoryForm = () => {
 
   return (
     <Form {...form}>
-      <form className="grid grid-cols-[238px_238px_min-content] gap-4" onSubmit={form.handleSubmit(onSubmitHandler)}>
+      <form className="grid gap-4 lg:grid-cols-[238px_238px_min-content]" onSubmit={form.handleSubmit(onSubmitHandler)}>
         <FormField
           control={form.control}
           render={({ field }) => (
@@ -51,7 +51,7 @@ export const CreateCategoryForm = () => {
           )}
           name="budget"
         />
-        <Button className="mt-8" type="submit" disabled={isLoading}>
+        <Button className="lg:mt-8" type="submit" disabled={isLoading}>
           + Add category
         </Button>
       </form>

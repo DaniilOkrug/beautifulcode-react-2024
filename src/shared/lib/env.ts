@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { z, ZodError } from 'zod';
 
 const envVariablesSchema = z.object({

@@ -1,11 +1,13 @@
 module.exports = {
-  plugins: ['prettier'],
+  plugins: ['prettier', 'jsx-a11y'],
   extends: [
     '@vercel/style-guide/eslint/browser',
     '@vercel/style-guide/eslint/typescript',
     '@vercel/style-guide/eslint/react',
     'eslint-config-prettier',
-  ].map(require.resolve),
+  ]
+    .map(require.resolve)
+    .concat(['plugin:jsx-a11y/strict']),
   parserOptions: {
     project: ['./tsconfig.node.json', './tsconfig.app.json'],
     tsconfigRootDir: __dirname,
@@ -23,7 +25,7 @@ module.exports = {
       },
     },
   },
-  ignorePatterns: ['node_modules/', 'dist/', 'env.d.ts'],
+  ignorePatterns: ['node_modules/', 'dist/', 'vite-env.d.ts', 'old/'],
   rules: {
     'prettier/prettier': [
       'error',

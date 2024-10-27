@@ -25,7 +25,7 @@ export const CreateTransactionForm = () => {
 
   return (
     <Form {...form}>
-      <form className="grid grid-cols-[238px_238px_min-content] gap-4" onSubmit={form.handleSubmit(onSubmitHandler)}>
+      <form className="grid gap-4 lg:grid-cols-[238px_238px_min-content]" onSubmit={form.handleSubmit(onSubmitHandler)}>
         <CreateTransactionFormCategorySelect />
         <FormField
           control={form.control}
@@ -40,7 +40,7 @@ export const CreateTransactionForm = () => {
           )}
           name="amount"
         />
-        <Button className="mt-8" type="submit" disabled={isLoading}>
+        <Button className="lg:mt-8" type="submit" disabled={isLoading}>
           Add Transaction
         </Button>
       </form>
