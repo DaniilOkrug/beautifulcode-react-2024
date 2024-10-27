@@ -1,50 +1,86 @@
-# React + TypeScript + Vite
+# Beautifulcode React 2024
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
 
-Currently, two official plugins are available:
+Этот проект представляет собой веб-интерфейс для управления личным бюджетом, позволяющий пользователю добавлять доходы и расходы, а также анализировать данные с помощью интерактивных графиков и диаграмм. Проект реализован с использованием архитектуры Feature Sliced Design, а деплой осуществляется на Vercel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Стек технологий
 
-## Expanding the ESLint configuration
+- **Frontend**: React, TypeScript, TailwindCSS
+- **Состояние и управление**: React Hook Form, Zod, Redux Toolkit, RTK Query
+- **Тестирование**: Vitest, React Testing Library, MSW
+- **Визуализация**: Recharts
+- **Сборка и запуск**: Vite
+- **Управление зависимостями**: PNPM
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Архитектура
 
-- Configure the top-level `parserOptions` property like this:
+Проект построен по принципам **Feature Sliced Design (FSD)**, что подразумевает:
+- Четкую организацию кода по слоям и модулям (features, entities, shared, widgets и т. д.).
+- Минимизацию связности между компонентами.
+- Упрощение масштабируемости и поддержки кода.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Основные папки
+
+- `app/` — настройки приложения (роутинг, стор).
+- `pages/` — страницы приложения.
+- `entities/` — сущности (модели данных и основные логические модули).
+- `features/` — реализации функций, форм, API-запросов.
+- `shared/` — общие компоненты и библиотеки, используемые в проекте.
+- `widgets/` — комплексные UI-компоненты, составленные из других модулей и компонентов.
+
+## Установка и запуск проекта
+
+1. **Клонируйте репозиторий**:
+    ```bash
+    git clone https://github.com/yourusername/beautifulcode-react-2024.git
+    cd beautifulcode-react-2024
+    ```
+
+2. **Установите зависимости с помощью PNPM**:
+    ```bash
+    pnpm install
+    ```
+
+3. **Запустите проект в режиме разработки**:
+    ```bash
+    pnpm dev
+    ```
+
+4. **Сборка проекта для продакшена**:
+    ```bash
+    pnpm build
+    ```
+
+5. **Предпросмотр продакшн-сборки**:
+    ```bash
+    pnpm preview
+    ```
+
+## Деплой
+
+Проект деплоится на Vercel, что позволяет управлять непрерывной интеграцией и доставкой обновлений.
+
+Ссылка на деплой
+
+## Скрипты
+
+- `dev`: запуск проекта в режиме разработки
+- `build`: сборка проекта для продакшена
+- `lint`: запуск линтера
+- `test`: запуск тестов с Vitest
+- `coverage`: запуск тестов с генерацией отчета о покрытии
+
+## Тестирование
+
+Для тестирования используется **Vitest** совместно с **React Testing Library** и **MSW** для мокирования запросов.
+
+Запуск тестов:
+```bash
+pnpm test
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Запуск тестов с покрытием:
+```
+pnpm coverage
 ```
