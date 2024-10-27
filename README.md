@@ -1,5 +1,7 @@
 # Beautifulcode React 2024
 
+[Ссылка на Github проекта](https://github.com/DaniilOkrug/beautifulcode-react-2024)
+
 ## Описание
 
 Этот проект представляет собой веб-интерфейс для управления личным бюджетом, позволяющий пользователю добавлять доходы и расходы, а также анализировать данные с помощью интерактивных графиков и диаграмм. Проект реализован с использованием архитектуры Feature Sliced Design, а деплой осуществляется на Vercel.
@@ -16,6 +18,7 @@
 ## Архитектура
 
 Проект построен по принципам **Feature Sliced Design (FSD)**, что подразумевает:
+
 - Четкую организацию кода по слоям и модулям (features, entities, shared, widgets и т. д.).
 - Минимизацию связности между компонентами.
 - Упрощение масштабируемости и поддержки кода.
@@ -32,36 +35,40 @@
 ## Установка и запуск проекта
 
 1. **Клонируйте репозиторий**:
-    ```bash
-    git clone https://github.com/yourusername/beautifulcode-react-2024.git
-    cd beautifulcode-react-2024
-    ```
+
+   ```bash
+   git clone https://github.com/yourusername/beautifulcode-react-2024.git
+   cd beautifulcode-react-2024
+   ```
 
 2. **Установите зависимости с помощью PNPM**:
-    ```bash
-    pnpm install
-    ```
+
+   ```bash
+   pnpm install
+   ```
 
 3. **Запустите проект в режиме разработки**:
-    ```bash
-    pnpm dev
-    ```
+
+   ```bash
+   pnpm dev
+   ```
 
 4. **Сборка проекта для продакшена**:
-    ```bash
-    pnpm build
-    ```
+
+   ```bash
+   pnpm build
+   ```
 
 5. **Предпросмотр продакшн-сборки**:
-    ```bash
-    pnpm preview
-    ```
+   ```bash
+   pnpm preview
+   ```
 
 ## Деплой
 
 Проект деплоится на Vercel, что позволяет управлять непрерывной интеграцией и доставкой обновлений.
 
-Ссылка на деплой
+[Ссылка на деплой](https://beautifulcode-react-2024.vercel.app/)
 
 ## Скрипты
 
@@ -76,11 +83,13 @@
 Для тестирования используется **Vitest** совместно с **React Testing Library** и **MSW** для мокирования запросов.
 
 Запуск тестов:
+
 ```bash
 pnpm test
 ```
 
 Запуск тестов с покрытием:
+
 ```
 pnpm coverage
 ```
