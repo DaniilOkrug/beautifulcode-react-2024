@@ -11,11 +11,12 @@ const defaultValues: CreateTransactionFormScheme = {
 };
 
 export const CreateTransactionForm = () => {
-  const [createTransaction] = useCreateTransactionMutation();
+  const [createTransaction, { isLoading }] = useCreateTransactionMutation();
 
   const form = useForm<CreateTransactionFormScheme>({
     resolver: zodResolver(createTransactionFormScheme),
     defaultValues,
+    disabled: isLoading,
   });
 
   const onSubmitHandler = async (data: CreateTransactionFormScheme) => {
@@ -24,7 +25,7 @@ export const CreateTransactionForm = () => {
 
   return (
     <Form {...form}>
-      <form className="flex gap-4" onSubmit={form.handleSubmit(onSubmitHandler)}>
+      <form className="grid grid-cols-[238px_238px_min-content] gap-4" onSubmit={form.handleSubmit(onSubmitHandler)}>
         <CreateTransactionFormCategorySelect />
         <FormField
           control={form.control}
@@ -39,7 +40,7 @@ export const CreateTransactionForm = () => {
           )}
           name="amount"
         />
-        <Button className="mt-8" type="submit">
+        <Button className="mt-8" type="submit" disabled={isLoading}>
           Add Transaction
         </Button>
       </form>

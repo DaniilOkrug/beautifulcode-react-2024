@@ -6,15 +6,16 @@ import { createCategoryFormScheme, type CreateCategoryFormScheme } from '../lib/
 
 const defaultValues: CreateCategoryFormScheme = {
   name: '',
-  budget: '',
+  budget: 0,
 };
 
 export const CreateCategoryForm = () => {
-  const [createCategory] = useCreateCategoryMutation();
+  const [createCategory, { isLoading }] = useCreateCategoryMutation();
 
   const form = useForm<CreateCategoryFormScheme>({
     resolver: zodResolver(createCategoryFormScheme),
     defaultValues,
+    disabled: isLoading,
   });
 
   const onSubmitHandler = async (data: CreateCategoryFormScheme) => {
@@ -23,7 +24,7 @@ export const CreateCategoryForm = () => {
 
   return (
     <Form {...form}>
-      <form className="flex gap-4" onSubmit={form.handleSubmit(onSubmitHandler)}>
+      <form className="grid grid-cols-[238px_238px_min-content] gap-4" onSubmit={form.handleSubmit(onSubmitHandler)}>
         <FormField
           control={form.control}
           render={({ field }) => (
@@ -50,7 +51,7 @@ export const CreateCategoryForm = () => {
           )}
           name="budget"
         />
-        <Button className="mt-8" type="submit">
+        <Button className="mt-8" type="submit" disabled={isLoading}>
           + Add category
         </Button>
       </form>
