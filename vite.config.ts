@@ -13,5 +13,12 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
+    coverage: {
+      // Excluded shared/ui because it's shadcn UIKIT components
+      exclude: ['**/browser', 'src/shared/ui'],
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+      include: ['src/'],
+    },
   },
 });
